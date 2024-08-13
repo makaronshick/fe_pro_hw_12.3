@@ -8,9 +8,9 @@ function createToDoList() {
   const addBtnElement = createButton("Add task", ["add_btn"]);
 
   addBtnElement.addEventListener("click", () => {
-    if (inputElement.value) {
+    if (inputElement.value.trim()) {
       const itemElement = document.createElement("li");
-      itemElement.textContent = inputElement.value;
+      itemElement.textContent = inputElement.value.trim();
       const delBtnElement = createButton("Delete task", ["del_btn"]);
       listElement.append(itemElement, delBtnElement);
       inputElement.value = "";
